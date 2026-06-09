@@ -1,408 +1,117 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>加载中...</title>
-
+<title>V6 软件下载站</title>
 <meta id="meta_desc" name="description">
 <meta id="meta_keywords" name="keywords">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#f6f7fb;
-font-family:"Microsoft YaHei";
-color:#333;
-}
-
-a{
-text-decoration:none;
-}
-
-.top{
-background:#2196f3;
-height:60px;
-line-height:60px;
-color:#fff;
-}
-
-.top-inner{
-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-}
-
-.top-menu a{
-color:#fff;
-margin-left:25px;
-}
-
-.header{
-background:#fff;
-padding:25px 0;
-}
-
-.header-inner{
-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:32px;
-font-weight:bold;
-color:#2196f3;
-}
-
-.search{
-width:420px;
-height:45px;
-border:2px solid #2196f3;
-border-radius:30px;
-padding:0 20px;
-}
-
-.container{
-width:1200px;
-margin:20px auto;
-}
-
-.breadcrumb{
-background:#fff;
-padding:15px 20px;
-border-radius:10px;
-margin-bottom:20px;
-}
-
-.app-box{
-background:#fff;
-padding:30px;
-border-radius:10px;
-display:flex;
-}
-
-.icon{
-width:180px;
-height:180px;
-border-radius:20px;
-object-fit:cover;
-}
-
-.info{
-flex:1;
-margin-left:30px;
-}
-
-.title{
-font-size:42px;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-.meta{
-line-height:40px;
-color:#666;
-font-size:18px;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:15px 60px;
-background:#00b894;
-color:#fff;
-border-radius:8px;
-font-size:22px;
-}
-
-.score{
-width:250px;
-text-align:center;
-}
-
-.score-num{
-font-size:70px;
-font-weight:bold;
-color:#ff9800;
-}
-
-.stars{
-font-size:28px;
-color:#ff9800;
-}
-
-.section{
-background:#fff;
-padding:30px;
-border-radius:10px;
-margin-top:20px;
-}
-
-.section h2{
-color:#2196f3;
-margin-bottom:20px;
-}
-
-#screens{
-display:flex;
-overflow-x:auto;
-gap:15px;
-}
-
-#screens img{
-width:320px;
-border-radius:10px;
-}
-
-.keyword{
-display:inline-block;
-padding:10px 20px;
-background:#f2f2f2;
-border-radius:20px;
-margin:8px;
-}
-
-.related{
-display:inline-block;
-padding:12px 25px;
-background:#2196f3;
-color:#fff;
-border-radius:8px;
-margin:8px;
-}
-
-#content{
-line-height:2;
-font-size:16px;
-}
-
-.footer{
-margin-top:40px;
-background:#333;
-color:#fff;
-padding:30px;
-text-align:center;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei";background:#f5f7fb;color:#333}
+.top{background:#2196f3;color:#fff;padding:12px 0}
+.wrap{width:1200px;margin:auto}
+.nav a{color:#fff;margin-right:20px;text-decoration:none}
+.breadcrumb,.card,.section{background:#fff;border-radius:10px}
+.breadcrumb{padding:12px 20px;margin:20px 0}
+.main{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.card{padding:25px}
+.apphead{display:flex;gap:20px}
+.icon{width:140px;height:140px;border-radius:20px;object-fit:cover}
+.title{font-size:36px;font-weight:bold;margin-bottom:10px}
+.meta{line-height:2}
+.btn{display:inline-block;background:#00b894;color:#fff;padding:14px 40px;border-radius:8px;text-decoration:none;margin-top:15px}
+.side .card{margin-bottom:20px}
+.section{padding:25px;margin-top:20px}
+.section h2{margin-bottom:15px;color:#2196f3}
+#screens img{width:260px;margin-right:10px;border-radius:10px}
+.tag{display:inline-block;background:#eef2f7;padding:8px 14px;border-radius:20px;margin:5px}
 </style>
-
 </head>
-
 <body>
+<div class="top"><div class="wrap nav"><a href="#">首页</a><a href="#">安卓下载</a><a href="#">排行榜</a></div></div>
+<div class="wrap">
+<div class="breadcrumb">首页 > 安卓下载 > <span id="keyword2"></span></div>
 
-<div class="top">
-<div class="top-inner">
-
-<div>安卓软件下载中心</div>
-
-<div class="top-menu">
-<a href="#">首页</a>
-<a href="#">安卓下载</a>
-<a href="#">软件排行</a>
-<a href="#">软件合集</a>
-<a href="#">教程中心</a>
-</div>
-
-</div>
-</div>
-
-<div class="header">
-
-<div class="header-inner">
-
-<div id="logo" class="logo">
-APP下载站
-</div>
-
-<input class="search" placeholder="搜索热门软件">
-
-</div>
-
-</div>
-
-<div class="container">
-
-<div class="breadcrumb">
-
-当前位置：
-首页 >
-安卓下载 >
-<span id="keyword2"></span>
-
-</div>
-
-<div class="app-box">
-
+<div class="main">
+<div>
+<div class="card">
+<div class="apphead">
 <img id="icon" class="icon">
-
-<div class="info">
-
+<div>
 <div id="title" class="title"></div>
-
 <div class="meta">
-
 版本：<span id="version"></span><br>
 大小：<span id="size"></span><br>
 更新：<span id="update"></span><br>
-语言：<span id="language"></span><br>
-系统：<span id="system"></span><br>
-下载：<span id="downloads"></span><br>
-厂商：<span id="company"></span>
-
+下载：<span id="downloads"></span>
 </div>
-
-<a id="download" class="btn" target="_blank">
-立即下载
-</a>
-
+<a id="download" class="btn" target="_blank">立即下载</a>
 </div>
-
-<div class="score">
-
-<div id="score" class="score-num">
-5.0
 </div>
-
-<div class="stars">
-★★★★★
-</div>
-
-</div>
-
 </div>
 
 <div class="section">
-
 <h2>软件截图</h2>
-
 <div id="screens"></div>
-
 </div>
 
 <div class="section">
-
 <h2>软件介绍</h2>
-
-<p id="description"></p>
-
+<div id="description"></div>
 </div>
 
 <div class="section">
-
-<h2>详细介绍</h2>
-
+<h2>详细内容</h2>
 <div id="content"></div>
-
+</div>
 </div>
 
-<div class="section">
+<div class="side">
+<div class="card">
+<h3>评分</h3>
+<div id="score" style="font-size:48px;color:#ff9800">5.0</div>
+</div>
 
-<h2>热门关键词</h2>
-
+<div class="card">
+<h3>热门关键词</h3>
 <div id="tails"></div>
-
 </div>
 
-<div class="section">
-
-<h2>相关推荐</h2>
-
+<div class="card">
+<h3>相关推荐</h3>
 <div id="related"></div>
-
 </div>
-
 </div>
-
-<div class="footer">
-Copyright © 2026 APP下载中心
+</div>
 </div>
 
 <script>
+const params=new URLSearchParams(location.search);
+const currentId=params.get('id')||'heiliao';
 
-fetch('https://raw.githubusercontent.com/blafitbooftet/seo-data/refs/heads/main/keywords.json')
+fetch('https://raw.githubusercontent.com/blafitbooftet/seo-data/refs/heads/main/data.json')
+.then(r=>r.json())
+.then(list=>{
+ const d=list.find(x=>x.id===currentId)||list[0];
 
-.then(res=>res.json())
+ document.title=d.title;
+ document.getElementById('keyword2').innerHTML=d.keyword;
+ document.getElementById('title').innerHTML=d.keyword;
+ document.getElementById('version').innerHTML=d.version;
+ document.getElementById('size').innerHTML=d.size;
+ document.getElementById('update').innerHTML=d.update;
+ document.getElementById('downloads').innerHTML=d.downloads;
+ document.getElementById('score').innerHTML=d.score;
+ document.getElementById('description').innerHTML=d.description;
+ document.getElementById('content').innerHTML=d.content;
+ document.getElementById('download').href=d.link;
+ document.getElementById('icon').src=d.icon;
 
-.then(data=>{
-
-document.title=data.title;
-
-document.getElementById("meta_desc")
-.setAttribute("content",data.description);
-
-document.getElementById("meta_keywords")
-.setAttribute("content",data.tails.join(','));
-
-document.getElementById("logo").innerHTML=data.keyword;
-
-document.getElementById("keyword2").innerHTML=data.keyword;
-
-document.getElementById("title").innerHTML=data.keyword;
-
-document.getElementById("version").innerHTML=data.version;
-
-document.getElementById("size").innerHTML=data.size;
-
-document.getElementById("update").innerHTML=data.update;
-
-document.getElementById("language").innerHTML=data.language;
-
-document.getElementById("system").innerHTML=data.system;
-
-document.getElementById("downloads").innerHTML=data.downloads;
-
-document.getElementById("company").innerHTML=data.company;
-
-document.getElementById("score").innerHTML=data.score;
-
-document.getElementById("description").innerHTML=data.description;
-
-document.getElementById("content").innerHTML=data.content;
-
-document.getElementById("download").href=data.link;
-
-document.getElementById("icon").src=data.icon;
-
-let screens='';
-
-data.screens.forEach(i=>{
-screens+=`<img src="${i}">`;
+ document.getElementById('screens').innerHTML=(d.screens||[]).map(i=>`<img src="${i}">`).join('');
+ document.getElementById('tails').innerHTML=(d.tails||[]).map(i=>`<span class="tag">${i}</span>`).join('');
+ document.getElementById('related').innerHTML=(d.related||[]).map(i=>`<span class="tag">${i}</span>`).join('');
 });
-
-document.getElementById('screens').innerHTML=screens;
-
-let tails='';
-
-data.tails.forEach(i=>{
-tails+=`<span class="keyword">${i}</span>`;
-});
-
-document.getElementById('tails').innerHTML=tails;
-
-let related='';
-
-data.related.forEach(i=>{
-related+=`<span class="related">${i}</span>`;
-});
-
-document.getElementById('related').innerHTML=related;
-
-});
-
 </script>
-
 </body>
 </html>
-```
