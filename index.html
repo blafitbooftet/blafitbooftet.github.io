@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>V6 软件下载站</title>
+<title>V7 SEO 下载站</title>
 <meta id="meta_desc" name="description">
 <meta id="meta_keywords" name="keywords">
 <style>
@@ -29,7 +29,7 @@ body{font-family:"Microsoft YaHei";background:#f5f7fb;color:#333}
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap nav"><a href="#">首页</a><a href="#">安卓下载</a><a href="#">排行榜</a></div></div>
+<div class="top"><div class="wrap nav"><a href="/">首页</a><a href="#">安卓下载</a><a href="#">排行榜</a></div></div>
 <div class="wrap">
 <div class="breadcrumb">首页 > 安卓下载 > <span id="keyword2"></span></div>
 
@@ -51,37 +51,15 @@ body{font-family:"Microsoft YaHei";background:#f5f7fb;color:#333}
 </div>
 </div>
 
-<div class="section">
-<h2>软件截图</h2>
-<div id="screens"></div>
-</div>
-
-<div class="section">
-<h2>软件介绍</h2>
-<div id="description"></div>
-</div>
-
-<div class="section">
-<h2>详细内容</h2>
-<div id="content"></div>
-</div>
+<div class="section"><h2>软件截图</h2><div id="screens"></div></div>
+<div class="section"><h2>软件介绍</h2><div id="description"></div></div>
+<div class="section"><h2>详细内容</h2><div id="content"></div></div>
 </div>
 
 <div class="side">
-<div class="card">
-<h3>评分</h3>
-<div id="score" style="font-size:48px;color:#ff9800">5.0</div>
-</div>
-
-<div class="card">
-<h3>热门关键词</h3>
-<div id="tails"></div>
-</div>
-
-<div class="card">
-<h3>相关推荐</h3>
-<div id="related"></div>
-</div>
+<div class="card"><h3>评分</h3><div id="score" style="font-size:48px;color:#ff9800">5.0</div></div>
+<div class="card"><h3>热门关键词</h3><div id="tails"></div></div>
+<div class="card"><h3>相关推荐</h3><div id="related"></div></div>
 </div>
 </div>
 </div>
@@ -90,27 +68,30 @@ body{font-family:"Microsoft YaHei";background:#f5f7fb;color:#333}
 const params=new URLSearchParams(location.search);
 const currentId=params.get('id')||'heiliao';
 
-fetch('https://raw.githubusercontent.com/blafitbooftet/seo-data/refs/heads/main/data.json')
+fetch(`data/${currentId}.json`)
 .then(r=>r.json())
-.then(list=>{
- const d=list.find(x=>x.id===currentId)||list[0];
+.then(d=>{
 
- document.title=d.title;
- document.getElementById('keyword2').innerHTML=d.keyword;
- document.getElementById('title').innerHTML=d.keyword;
- document.getElementById('version').innerHTML=d.version;
- document.getElementById('size').innerHTML=d.size;
- document.getElementById('update').innerHTML=d.update;
- document.getElementById('downloads').innerHTML=d.downloads;
- document.getElementById('score').innerHTML=d.score;
- document.getElementById('description').innerHTML=d.description;
- document.getElementById('content').innerHTML=d.content;
- document.getElementById('download').href=d.link;
- document.getElementById('icon').src=d.icon;
+document.title=d.title||d.keyword;
+document.getElementById('keyword2').innerHTML=d.keyword||'';
+document.getElementById('title').innerHTML=d.keyword||'';
+document.getElementById('version').innerHTML=d.version||'';
+document.getElementById('size').innerHTML=d.size||'';
+document.getElementById('update').innerHTML=d.update||'';
+document.getElementById('downloads').innerHTML=d.downloads||'';
+document.getElementById('score').innerHTML=d.score||'';
+document.getElementById('description').innerHTML=d.description||'';
+document.getElementById('content').innerHTML=d.content||'';
+document.getElementById('download').href=d.link||'#';
+document.getElementById('icon').src=d.icon||'https://picsum.photos/300';
 
- document.getElementById('screens').innerHTML=(d.screens||[]).map(i=>`<img src="${i}">`).join('');
- document.getElementById('tails').innerHTML=(d.tails||[]).map(i=>`<span class="tag">${i}</span>`).join('');
- document.getElementById('related').innerHTML=(d.related||[]).map(i=>`<span class="tag">${i}</span>`).join('');
+document.getElementById('screens').innerHTML=(d.screens||[]).map(i=>`<img src="${i}">`).join('');
+document.getElementById('tails').innerHTML=(d.tails||[]).map(i=>`<span class="tag">${i}</span>`).join('');
+document.getElementById('related').innerHTML=(d.related||[]).map(i=>`<span class="tag">${i}</span>`).join('');
+
+})
+.catch(()=>{
+document.body.innerHTML='<h1 style="text-align:center;margin-top:100px">页面不存在</h1>';
 });
 </script>
 </body>
