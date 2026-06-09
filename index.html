@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>加载中...</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
@@ -18,132 +15,153 @@ box-sizing:border-box;
 }
 
 body{
-font-family:"Microsoft YaHei",sans-serif;
+font-family:"Microsoft YaHei";
 background:#f5f5f5;
-padding:50px 20px;
 }
 
-.box{
-
-max-width:1000px;
-margin:auto;
-
-background:#fff;
-
-padding:50px;
-
-border-radius:12px;
-
-box-shadow:0 0 20px rgba(0,0,0,.08);
-
-text-align:center;
-
-}
-
-h1{
-
-font-size:48px;
-
-color:#0066cc;
-
-margin-bottom:30px;
-
-}
-
-.desc{
-
-font-size:22px;
-
-color:#333;
-
-margin-bottom:40px;
-
-}
-
-.btn{
-
-display:inline-block;
-
-padding:18px 60px;
-
-background:#ff6600;
-
+.top{
+height:60px;
+background:#2196f3;
 color:#fff;
-
-font-size:24px;
-
-text-decoration:none;
-
-border-radius:8px;
-
-transition:.3s;
-
-}
-
-.btn:hover{
-
-background:#ff4d00;
-
-}
-
-ul{
-
-list-style:none;
-
-margin-top:50px;
-
-padding:0;
-
-}
-
-li{
-
+display:flex;
+align-items:center;
+padding:0 30px;
 font-size:22px;
-
-line-height:50px;
-
-color:#333;
-
+font-weight:bold;
 }
 
-.footer{
+.container{
+width:1200px;
+margin:20px auto;
+}
 
-margin-top:40px;
+.appbox{
+background:#fff;
+padding:30px;
+display:flex;
+border-radius:10px;
+}
 
-color:#999;
+.icon{
+width:150px;
+height:150px;
+border-radius:20px;
+object-fit:cover;
+}
 
-font-size:14px;
+.info{
+margin-left:30px;
+flex:1;
+}
 
+.title{
+font-size:36px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.meta{
+line-height:40px;
+font-size:18px;
+color:#666;
+}
+
+.download{
+display:inline-block;
+margin-top:20px;
+background:#1abc9c;
+color:#fff;
+padding:15px 50px;
+text-decoration:none;
+border-radius:8px;
+font-size:22px;
+}
+
+.section{
+background:#fff;
+margin-top:20px;
+padding:30px;
+border-radius:10px;
+}
+
+.section h2{
+margin-bottom:20px;
+color:#2196f3;
+}
+
+.keyword{
+display:inline-block;
+padding:10px 20px;
+background:#f2f2f2;
+margin:10px;
+border-radius:20px;
+}
+
+.related{
+display:inline-block;
+padding:12px 25px;
+background:#2196f3;
+color:#fff;
+margin:10px;
+border-radius:8px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="box">
-
-<h1 id="keyword">加载中...</h1>
-
-<div class="desc" id="desc">
-加载中...
+<div class="top">
+安卓软件下载中心
 </div>
 
-<a
-id="btn"
-class="btn"
-href="#"
-target="_blank"
->
-点击进入
+<div class="container">
+
+<div class="appbox">
+
+<img id="icon" class="icon">
+
+<div class="info">
+
+<div id="title" class="title"></div>
+
+<div class="meta">
+版本：<span id="version"></span><br>
+大小：<span id="size"></span><br>
+更新：<span id="update"></span><br>
+语言：<span id="language"></span><br>
+系统：<span id="system"></span>
+</div>
+
+<a id="download" class="download" target="_blank">
+立即下载
 </a>
 
-<ul id="tails"></ul>
+</div>
 
-<div class="footer">
+</div>
 
-Powered by GitHub Pages
+<div class="section">
+
+<h2>软件介绍</h2>
+
+<p id="description"></p>
+
+</div>
+
+<div class="section">
+
+<h2>热门关键词</h2>
+
+<div id="tails"></div>
+
+</div>
+
+<div class="section">
+
+<h2>相关推荐</h2>
+
+<div id="related"></div>
 
 </div>
 
@@ -151,46 +169,51 @@ Powered by GitHub Pages
 
 <script>
 
-fetch(
-'https://raw.githubusercontent.com/blafitbooftet/seo-data/refs/heads/main/keywords.json'
-)
+fetch('https://raw.githubusercontent.com/blafitbooftet/seo-data/refs/heads/main/keywords.json')
 
-.then(response => response.json())
+.then(r=>r.json())
 
-.then(data => {
+.then(data=>{
 
-document.title = data.title;
+document.title=data.title;
 
-document.getElementById('keyword').innerHTML = data.keyword;
+document.getElementById('title').innerHTML=data.keyword;
 
-document.getElementById('desc').innerHTML = data.description;
+document.getElementById('version').innerHTML=data.version;
 
-document.getElementById('btn').innerHTML = data.button;
+document.getElementById('size').innerHTML=data.size;
 
-document.getElementById('btn').href = data.link;
+document.getElementById('update').innerHTML=data.update;
 
-let html='';
+document.getElementById('language').innerHTML=data.language;
 
-data.tails.forEach(item=>{
+document.getElementById('system').innerHTML=data.system;
 
-html += `<li>${item}</li>`;
+document.getElementById('description').innerHTML=data.description;
 
+document.getElementById('download').href=data.link;
+
+document.getElementById('icon').src=data.icon;
+
+let tails='';
+
+data.tails.forEach(i=>{
+tails+=`<span class="keyword">${i}</span>`;
 });
 
-document.getElementById('tails').innerHTML = html;
+document.getElementById('tails').innerHTML=tails;
 
-})
+let related='';
 
-.catch(error=>{
+data.related.forEach(i=>{
+related+=`<span class="related">${i}</span>`;
+});
 
-console.log(error);
-
-document.getElementById('keyword').innerHTML='读取失败';
+document.getElementById('related').innerHTML=related;
 
 });
 
 </script>
 
 </body>
-
 </html>
