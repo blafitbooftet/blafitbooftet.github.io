@@ -1,47 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=heiliao</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=51cg</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=chigua</loc>
-<changefreq>daily</changefreq>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=mogu</loc>
-<changefreq>daily</changefreq>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=haijiao</loc>
-<changefreq>daily</changefreq>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=xiuxiumanhua</loc>
-<changefreq>daily</changefreq>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://blafitbooftet.github.io/?id=zhongwenzimu</loc>
-<changefreq>daily</changefreq>
-<priority>0.9</priority>
-</url>
-
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://example.com/ri-ben-mv-ou-mei-mv-guo-chan-mv-wang-zhan-mian-fei-guan-kan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/mian-fei-ri-ben-mv-zai-xian-guan-kan-wang-zhan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/zui-jin-ri-ben-mv-zi-mu-mian-fei-guan-kan-shi-pin-7.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/zui-jin-ri-ben-mv-zi-mu-mian-fei-guan-kan-shi-pin-60-miao-bo-fang.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/zui-jin-han-guo-ri-ben-mian-fei-mv-gao-qing-guan-kan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/zui-jin-ri-ben-han-guo-mian-fei-gao-qing-guan-kan-mv.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/zui-jin-ri-ben-mv-mian-fei-gao-qing-zai-xian.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/zui-jin-ri-ben-mv-zi-mu-mian-fei-guan-kan-shi-pin.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/ri-ben-mv-mian-fei-guan-kan-wang-zhan-jiu-jiu-jiu.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/ma-ma-wo-xiang-ni-mv-ri-ben-mian-fei-guan-kan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/mi-tao-ri-ben-mian-fei-mv-mian-fei-bo-fang.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/ri-ben-mv-pian-quan-bu-mian-fei-guan-kan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/ri-ben-mv-gao-qing-mian-fei-zai-xian-guan-kan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://example.com/ri-ben-mv-mian-fei-gao-qing-zai-xian-guan-kan.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
